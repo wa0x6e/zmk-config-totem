@@ -150,6 +150,16 @@
             bindings = <&kp LG(ENTER)>;
             key-positions = <27 29>;
         };
+
+        combo_escape_2 {
+            bindings = <&kp ESCAPE>;
+            key-positions = <32 33>;
+        };
+
+        vim_command {
+            bindings = <&vim_command>;
+            key-positions = <15 21>;
+        };
     };
 
     macros {
@@ -170,6 +180,13 @@
                 <&macro_release>,
                 <&kp LSHIFT>;
         };
+
+        vim_command: vim_command {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp ESCAPE &kp COLON>;
+            label = "VIM_COMMAND";
+        };
     };
 
     keymap {
@@ -178,10 +195,10 @@
         default_layer {
             display-name = "COLMAK";
             bindings = <
-                          &kp Q        &kp W       &kp F                           &kp P         &kp B                  &kp J            &kp L         &kp U             &kp Y       &kp SINGLE_QUOTE
-                          &hm LCTRL A  &hm LALT R  &hm LGUI S                      &hm LSHIFT T  &kp G                  &kp M            &hm LSHIFT N  &hm LGUI E        &hm LALT I  &hm LCTRL O
-&trans                    &kp Z        &kp X       &kp C                           &kp D         &kp V                  &kp K            &kp H         &comma_semicolon  &dot_colon  &excl_quest       &trans
-                                                   &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl 2         &mt LEFT_SHIFT SPACE   &lt 3 BACKSPACE  &sl 1         &sl 4
+                          &kp Q        &kp W       &kp F                           &kp P         &kp B                  &kp J            &kp L           &kp U             &kp Y       &kp SINGLE_QUOTE
+                          &hm LCTRL A  &hm LALT R  &hm LGUI S                      &hm LSHIFT T  &kp G                  &kp M            &hm LSHIFT N    &hm LGUI E        &hm LALT I  &hm LCTRL O
+&trans                    &kp Z        &kp X       &kp C                           &kp D         &kp V                  &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &trans
+                                                   &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl 2         &lt 1 SPACE            &lt 3 BACKSPACE  &sk LEFT_SHIFT  &sl 4
             >;
         };
 
@@ -198,10 +215,10 @@
         layer_sym {
             display-name = "SYMBOL";
             bindings = <
-                          &kp EXCL   &kp AT    &kp HASH   &kp DLLR  &kp PRCNT                 &trans  &kp PIPE               &kp BACKSLASH    &kp LPAR           &kp RPAR
-                          &kp CARET  &kp AMPS  &kp ASTRK  &trans    &trans                    &trans  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LESS_THAN
-&trans                    &trans     &trans    &trans     &trans    &trans                    &trans  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN  &trans
-                                              &trans     &trans    &trans                    &trans  &trans                 &trans
+                          &trans     &trans     &trans     &trans     &trans       &kp AMPS    &kp PIPE               &kp BACKSLASH    &trans             &trans
+                          &kp COLON  &kp SLASH  &kp ASTRK  &kp AT     &kp PERCENT  &kp DOLLAR  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LESS_THAN
+&trans                    &trans     &trans     &trans     &kp CARET  &trans       &kp HASH    &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN  &trans
+                                               &trans     &trans     &trans       &trans      &trans                 &trans
             >;
         };
 
@@ -219,8 +236,8 @@
             display-name = "FN";
             bindings = <
                           &kp F1      &kp F2     &kp F3       &kp F4     &kp F5        &kp F6       &kp F7     &kp F8       &kp F9      &kp F10
-                          &trans      &trans     &trans       &trans     &trans        &bootloader  &trans     &trans       &trans      &kp PRINTSCREEN
-&trans                    &sys_reset  &trans     &bootloader  &trans     &trans        &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK  &trans
+                          &trans      &mkp LCLK  &mkp MCLK    &mkp RCLK  &mkp MB4      &bootloader  &mkp LCLK  &mkp MCLK    &mkp RCLK   &kp PRINTSCREEN
+&trans                    &sys_reset  &trans     &bootloader  &trans     &mkp MB5      &trans       &trans     &bootloader  &sys_reset  &kp SCROLLLOCK  &trans
                                                  &trans       &trans     &trans        &trans       &trans     &trans
             >;
         };
