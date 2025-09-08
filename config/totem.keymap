@@ -171,7 +171,7 @@
             bindings = <
                    &kp Q        &kp W       &kp F                           &kp P         &kp B          &kp J            &kp L           &kp U             &kp Y       &kp SINGLE_QUOTE
                    &hm LCTRL A  &hm LALT R  &hm LGUI S                      &hm LSHIFT T  &kp G          &kp M            &hm LSHIFT N    &hm LGUI E        &hm LALT I  &hm LCTRL O
-&kp LA(LS(SPACE))  &kp Z        &kp X       &kp C                           &kp D         &kp V          &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &trans
+&kp LA(LS(SPACE))  &kp Z        &kp X       &kp C                           &kp D         &kp V          &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &kp MINUS
                                             &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl 2         &lt 1 SPACE    &lt 3 BACKSPACE  &sk LEFT_SHIFT  &sl 4
             >;
         };
@@ -181,7 +181,7 @@
             bindings = <
         &trans     &trans    &trans     &trans    &trans       &trans      &kp N7  &kp N8  &kp N9  &kp COMMA
         &kp SLASH  &kp STAR  &kp MINUS  &kp PLUS  &kp EQUAL    &kp DOLLAR  &kp N4  &kp N5  &kp N6  &kp N0
-&trans  &trans     &trans    &trans     &trans    &kp CARET    &kp HASH    &kp N1  &kp N2  &kp N3  &kp PERIOD  &trans
+&trans  &trans     &trans    &trans     &trans    &trans       &kp HASH    &kp N1  &kp N2  &kp N3  &kp PERIOD  &trans
                              &trans     &trans    &trans       &trans      &trans  &trans
             >;
         };
@@ -189,9 +189,9 @@
         layer_sym {
             display-name = "SYMBOL";
             bindings = <
-        &trans     &trans     &trans     &trans     &trans         &kp AMPS    &kp PIPE               &kp BACKSLASH    &trans             &trans
+        &trans     &trans     &trans     &trans     &trans         &kp AMPS    &kp PIPE               &kp BACKSLASH    &kp TILDE          &kp GRAVE
         &kp COLON  &kp SLASH  &kp ASTRK  &kp AT     &kp PERCENT    &kp DOLLAR  &kp LEFT_PARENTHESIS   &kp LEFT_BRACE   &kp LEFT_BRACKET   &kp LESS_THAN
-&trans  &trans     &trans     &trans     &kp CARET  &trans         &kp HASH    &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN  &trans
+&trans  &trans     &trans     &trans     &kp CARET  &trans         &kp HASH    &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE  &kp RIGHT_BRACKET  &kp GREATER_THAN  &kp EQUAL
                               &trans     &trans     &trans         &trans      &trans                 &trans
             >;
         };
