@@ -167,7 +167,7 @@
                    &kp Q        &kp W       &kp F                           &kp P         &kp B          &kp J            &kp L           &kp U             &kp Y       &kp SINGLE_QUOTE
                    &hm LCTRL A  &hm LALT R  &hm LGUI S                      &hm LSHIFT T  &kp G          &kp M            &hm LSHIFT N    &hm LGUI E        &hm LALT I  &hm LCTRL O
 &kp LA(LS(SPACE))  &kp Z        &kp X       &kp C                           &kp D         &kp V          &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &kp MINUS
-                                            &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl 2         &lt 1 SPACE    &lt 3 BACKSPACE  &sk LEFT_SHIFT  &sl 4
+                                            &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl 2         &lt 1 SPACE    &lt 3 BACKSPACE  &sk LEFT_SHIFT  &trans
             >;
         };
 
@@ -222,5 +222,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        FN {
+            if-layers = <1 3>;
+            then-layer = <4>;
+        };
+    };
 };
