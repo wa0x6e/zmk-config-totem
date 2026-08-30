@@ -121,6 +121,16 @@
             bindings = <&vim_command>;
             key-positions = <16 13>;
         };
+
+        // FN holds BT_CLR_ALL and sys_reset, so it must not be reachable by a
+        // single key. Outer bottom corners, one per hand, plus a 1s idle guard.
+        combo_fn {
+            timeout-ms = <50>;
+            require-prior-idle-ms = <1000>;
+            key-positions = <20 31>;
+            bindings = <&sl FN>;
+            layers = <BASE>;
+        };
     };
 
     macros {
@@ -140,8 +150,8 @@
             bindings = <
                    &kp Q        &kp W       &kp F                           &kp P         &kp B          &kp J            &kp L           &kp U             &kp Y       &kp SINGLE_QUOTE
                    &hm LCTRL A  &hm LALT R  &hm LGUI S                      &hm LSHIFT T  &kp G          &kp M            &hm LSHIFT N    &hm LGUI E        &hm LALT I  &hm LCTRL O
-&kp LA(LS(SPACE))  &kp Z        &kp X       &kp C                           &kp D         &kp V          &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &kp MINUS
-                                            &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl SYM       &lt NUM SPACE  &lt NAV BACKSPACE  &sk LEFT_SHIFT  &sl FN
+&none              &kp Z        &kp X       &kp C                           &kp D         &kp V          &kp K            &kp H           &comma_semicolon  &dot_colon  &excl_quest       &kp MINUS
+                                            &sk LS(LA(LC(LG(LEFT_SHIFT))))  &sl SYM       &lt NUM SPACE  &lt NAV BACKSPACE  &sk LEFT_SHIFT  &kp LC(SPACE)
             >;
         };
 
